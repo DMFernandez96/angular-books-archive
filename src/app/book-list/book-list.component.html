@@ -10,24 +10,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let book of books" [ngClass]="{'nytimes': book.nytimes}">
             <td><img [src]="book.imagen" [alt]="book.titulo"></td>
-            <td>{{book.titulo}}</td>
+            <td>{{book.titulo |uppercase}}</td>
             <td>{{book.autor}}</td>
             <td>{{book.genero}}</td>
-            <td>{{book.valoracion}}</td>
-        </tr>
-        <tr>
-            <td>Los Juegos del hambre</td>
-            <td>Sussan Collins</td>
-            <td>Distopia</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <td>{{book.valoracion}}</td> -->
+            <td><span class="badge badge-danger" *ngIf="book.valoracion==0">LA VALORACION ES 0</span></td>
         </tr>
     </tbody>
 </table>
