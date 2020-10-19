@@ -16,6 +16,7 @@ export class BookListComponent implements OnInit {
       valoracion: 4.5,
       imagen: "assets/img/norwegianwood.jpg",
       nytimes: false,
+      cantidad: 0,
     }, 
     {
       titulo: "Los juegos del hambre",
@@ -24,6 +25,7 @@ export class BookListComponent implements OnInit {
       valoracion: 4,
       imagen: "assets/img/norwegianwood.jpg",
       nytimes: true,
+      cantidad: 0,
     },
     {
       titulo: "La odisea",
@@ -32,12 +34,27 @@ export class BookListComponent implements OnInit {
       valoracion: 0,
       imagen: "assets/img/norwegianwood.jpg",
       nytimes: false,
+      cantidad: 0,
     },
   ];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  upCantidad(book: Book): void{ //a book le paso el tipo. es de tipo Book. Y va a devolver void pq no lo vamos a utilizar
+    if(book.cantidad < book.valoracion)
+      book.cantidad++;  
+  }
+
+  downCantidad(book: Book): void{ //a book le paso el tipo. es de tipo Book. Y va a devolver void pq no lo vamos a utilizar
+    if(book.cantidad > 0)
+      book.cantidad--;  
+  }
+
+  onChangeCantidad(event, book: Book): void { //seguirlo yo
+    console.log(event.key);
   }
 
 }

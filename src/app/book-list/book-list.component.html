@@ -7,16 +7,23 @@
             <th>Autor</th>
             <th>Genero</th>
             <th>Valoracion</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let book of books" [ngClass]="{'nytimes': book.nytimes}">
-            <td><img [src]="book.imagen" [alt]="book.titulo"></td>
+            <td><img class="img-thumbnail" width="90" [src]="book.imagen" [alt]="book.titulo"></td>
             <td>{{book.titulo |uppercase}}</td>
             <td>{{book.autor}}</td>
             <td>{{book.genero}}</td>
             <!-- <td>{{book.valoracion}}</td> -->
-            <td><span class="badge badge-danger" *ngIf="book.valoracion==0">LA VALORACION ES 0</span></td>
+            <td><span class="badge badge-danger" *ngIf="book.valoracion==0">VALOR ES 0</span></td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="downCantidad(book)">-</button>
+                <input type="text" [(ngModel)]="book.cantidad" (keyup)="onChangeCantidad($event, book)">
+                <button class="btn btn-primary btn-sm" (click)="upCantidad(book)">+</button>
+                <!-- book lo declare en el *ngFor -->
+            </td>
         </tr>
     </tbody>
 </table>
