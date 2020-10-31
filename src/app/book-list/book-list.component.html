@@ -18,12 +18,22 @@
             <td>{{book.genero}}</td>
             <!-- <td>{{book.valoracion}}</td> -->
             <td><span class="badge badge-danger" *ngIf="book.valoracion==0">VALOR ES 0</span></td>
-            <td>
-                <button class="btn btn-primary btn-sm" (click)="downCantidad(book)">-</button>
-                <input type="text" [(ngModel)]="book.cantidad" (keyup)="onChangeCantidad($event, book)">
-                <button class="btn btn-primary btn-sm" (click)="upCantidad(book)">+</button>
-                <!-- book lo declare en el *ngFor -->
+            <!-- <div class="row-xs-4"> -->
+
+            <td class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary btn-sm" (click)="downCantidad(book)">-</button>
+                    <!-- book lo declare en el *ngFor -->
+
+                    <input class="form-control col-xs-4" type="text" [(ngModel)]="book.cantidad" (keyup)="onChangeCantidad($event, book)">
+
+                    <button class="btn btn-primary btn-sm" (click)="upCantidad(book)">+</button>
+                </div>
             </td>
+
+
+            <!-- </div> -->
+
         </tr>
     </tbody>
 </table>
