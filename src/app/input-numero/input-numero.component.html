@@ -1,0 +1,12 @@
+<div class="input-group">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <button class="btn btn-primary btn-sm" (click)="downCantidad()">-</button>
+            <!-- book lo declare en el *ngFor -->
+        </div>
+        <input class="form-control text-center" type="text" [(ngModel)]="cantidad" (keyup)="onChangeCantidad($event)">
+        <div class="input-group-append">
+            <button class="btn btn-primary btn-sm" (click)="upCantidad()">+</button>
+        </div>
+    </div>
+</div>
