@@ -18,22 +18,11 @@
             <td>{{book.genero}}</td>
             <!-- <td>{{book.valoracion}}</td> -->
             <td><span class="badge badge-danger" *ngIf="book.valoracion==0">VALOR ES 0</span></td>
-            <!-- <div class="row-xs-4"> -->
-
-            <td class="row">
-                <div class="col-xs-12">
-                    <button class="btn btn-primary btn-sm" (click)="downCantidad(book)">-</button>
-                    <!-- book lo declare en el *ngFor -->
-
-                    <input class="form-control col-xs-4" type="text" [(ngModel)]="book.cantidad" (keyup)="onChangeCantidad($event, book)">
-
-                    <button class="btn btn-primary btn-sm" (click)="upCantidad(book)">+</button>
-                </div>
+            <td>
+                <app-input-numero [(cantidad)]="book.cantidad" [max]="book.valoracion" *ngIf="book.valoracion" (maxAlcanzado)="maximoAlcanzado($event)"></app-input-numero>
+                <!-- *ngIf es para q no muestre el componente si la valoracion es 0 -->
+                Cant: {{book.cantidad}}
             </td>
-
-
-            <!-- </div> -->
-
         </tr>
     </tbody>
 </table>

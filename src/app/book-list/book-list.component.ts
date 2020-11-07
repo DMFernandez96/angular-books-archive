@@ -43,18 +43,9 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upCantidad(book: Book): void{ //a book le paso el tipo. es de tipo Book. Y va a devolver void pq no lo vamos a utilizar
-    if(book.cantidad < book.valoracion)
-      book.cantidad++;  
-  }
-
-  downCantidad(book: Book): void{ //a book le paso el tipo. es de tipo Book. Y va a devolver void pq no lo vamos a utilizar
-    if(book.cantidad > 0)
-      book.cantidad--;  
-  }
-
-  onChangeCantidad(event, book: Book): void { //seguirlo yo
-    console.log(event.key);
+  maximoAlcanzado(mensaje : string){
+    alert(mensaje);
+    
   }
 
 }

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BookshopSucursalesComponent } from './bookshop-sucursales/bookshop-sucursales.component';
 import { BookshopCarritoComponent } from './bookshop-carrito/bookshop-carrito.component';
 import { BookshopLibrosComponent } from './bookshop-libros/bookshop-libros.component';
+import { InputNumeroComponent } from './input-numero/input-numero.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BookshopLibrosComponent } from './bookshop-libros/bookshop-libros.compo
     BookListComponent,
     BookshopSucursalesComponent,
     BookshopCarritoComponent,
-    BookshopLibrosComponent
+    BookshopLibrosComponent,
+    InputNumeroComponent
   ],
   imports: [
     BrowserModule,
