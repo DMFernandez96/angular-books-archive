@@ -7,5 +7,6 @@ export interface Book{
     valoracion: number;
     imagen: string; //pq es una url
     nytimes: boolean; //estuvo en la lista del new york times?
+    stock: number;
     cantidad: number;
 }
