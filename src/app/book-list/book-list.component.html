@@ -7,7 +7,7 @@
             <th>Titulo</th>
             <th>Autor</th>
             <th>Genero</th>
-            <th>Valoracion</th>
+            <th>Precio</th>
             <th>Stock</th>
             <th>Compra</th>
         </tr>
@@ -18,13 +18,12 @@
             <td>{{book.titulo |uppercase}}</td>
             <td>{{book.autor}}</td>
             <td>{{book.genero}}</td>
-            <!-- <td>{{book.valoracion}}</td> -->
-            <td><span class="badge badge-danger" *ngIf="book.stock==0">Stock en 0</span></td>
-            <td class="display-flex">
+            <td>{{book.precio |currency}}</td>
+            <!-- <td><span class="badge badge-danger" *ngIf="book.stock==0">Stock en 0</span></td> -->
+            <td class="display-flex" width="120">
                 <app-input-numero [(cantidad)]="book.cantidad" [max]="book.stock" *ngIf="book.stock" (maxAlcanzado)="maximoAlcanzado($event)"></app-input-numero>
                 <!-- *ngIf es para q no muestre el componente si la valoracion es 0 -->
-                Cant: {{book.cantidad}}
-
+                <span class="badge badge-danger" *ngIf="book.stock==0">Stock en 0</span>
             </td>
             <td>
                 <button class="btn btn-primary" (click)="agregarAlCarrito(book)">Comprar</button>

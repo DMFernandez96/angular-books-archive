@@ -16,7 +16,7 @@ export class BookListComponent implements OnInit {
       titulo: "Tokio Blues",
       autor: "Haruki Murakami",
       genero: "Realismo",
-      valoracion: 4.5,
+      precio: 1299,
       imagen: "assets/img/norwegianwood.jpg",
       nytimes: false,
       stock: 5,
@@ -26,8 +26,8 @@ export class BookListComponent implements OnInit {
       titulo: "Los juegos del hambre",
       autor: "Sussan Collins",
       genero: "Distopia",
-      valoracion: 4,
-      imagen: "assets/img/norwegianwood.jpg",
+      precio: 1350,
+      imagen: "assets/img/juegosdelhambre.jpg",
       nytimes: true,
       stock: 4,
       cantidad: 0,
@@ -36,10 +36,20 @@ export class BookListComponent implements OnInit {
       titulo: "La odisea",
       autor: "Homero",
       genero: "Poesia epica griega",
-      valoracion: 0,
-      imagen: "assets/img/norwegianwood.jpg",
+      precio: 885,
+      imagen: "assets/img/odisea.jpg",
       nytimes: false,
       stock: 2,
+      cantidad: 0,
+    },
+    {
+      titulo: "Tan poca vida",
+      autor: "Homero",
+      genero: "Realismo",
+      precio: 1500,
+      imagen: "assets/img/tanpocavida.jpg",
+      nytimes: true,
+      stock: 3,
       cantidad: 0,
     },
   ];
@@ -55,6 +65,8 @@ export class BookListComponent implements OnInit {
       this.carrito.agregarAlCarrito(book);
       book.stock -= book.cantidad;
       book.cantidad= 0;
+    }else{
+      alert("No ha especificado la cantidad de unidades que desea comprar");
     }
     
   }

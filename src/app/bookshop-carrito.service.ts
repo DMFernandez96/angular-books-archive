@@ -8,7 +8,7 @@ import { Book } from './book-list/Book';
 //maneja la logica del carrito
 export class BookshopCarritoService {
   private _listaCompra: Book[] = [];
-  listaCompra: BehaviorSubject<Book[]> = new BehaviorSubject ([]); //  
+  listaCompra: BehaviorSubject<Book[]> = new BehaviorSubject ([]); 
 
 
   constructor() { }

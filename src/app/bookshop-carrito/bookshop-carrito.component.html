@@ -1,6 +1,21 @@
 <h3>Carrito de compras </h3>
-<ul>
-    <li *ngFor="let book of listaCompra$ | async">
-        {{book.titulo}} : {{book.cantidad}}
+<!-- <ul class="list-group">
+    <li *ngFor="let book of listaCompra$ | async" class="list-group-item w-100">
+        {{book.titulo}}
+        <span class="badge badge-primary badge-pill">{{book.cantidad}} unidades</span>
     </li>
-</ul>
+</ul> -->
+<table class="table table-striped w-100">
+    <thead>
+        <tr>
+            <th scope="col">Libro</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of listaCompra$ | async">
+            <td>{{book.titulo}}</td>
+            <td><span class="badge badge-primary badge-pill">{{book.cantidad}} unidades</span> </td>
+        </tr>
+    </tbody>
+</table>

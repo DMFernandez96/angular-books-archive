@@ -4,7 +4,7 @@ export interface Book{
     titulo: string;
     autor: string;
     genero: string;
-    valoracion: number;
+    precio: number;
     imagen: string; //pq es una url
     nytimes: boolean; //estuvo en la lista del new york times?
     stock: number;
